@@ -1,0 +1,5 @@
+{
+  "General":"config_server.json",
+  "Modules:text":"text.json",
+  "Modules:temp":"temp.json"
+}
