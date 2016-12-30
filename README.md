@@ -6,11 +6,11 @@ This is a website created to present what is _[RORI](https://github.com/AmarOk14
 
 # Screenshots
 
-![The main page](index.png)
+![The main page](rsc/index.png)
 
-![General configuration](general.png)
+![General configuration](rsc/general.png)
 
-![Module configuration](module.png)
+![Module configuration](rsc/module.png)
 
 # Configure
 
