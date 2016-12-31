@@ -1737,17 +1737,13 @@
 		font-size: 2.75em;
 	}
 
-	#btn_up {
-		padding-right: 9%;
-	}
-
 	#discover {
 		text-align: center;
 	}
 
 	#discover img {
-		width: 80%;
-		margin-top: 50px;
+		width: 75%;
+		margin-top: -25px;
 	}
 
 	#general h1 {
@@ -3944,6 +3940,11 @@
 
 	#gif_rori img {
 		width: 100%;
+	}
+
+	#downloads .inner p {
+		margin-top: 10px;
+		margin-bottom: 30px;
 	}
 
 		#intro p {

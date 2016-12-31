@@ -1,0 +1,22 @@
+[
+  {
+    "name":"music_launcher",
+    "desc":"Launch a random music from player",
+    "img":"rori_modules/music_launcher/_min.jpg",
+    "enabled":true,
+    "condition":"(musi(c|que) ?!)|((play|lance|joue).{1,30}(musi(c|que)))",
+    "path":"music_launcher/module.py",
+    "priority":0,
+    "deps":[]
+  },
+  {
+    "name":"temp",
+    "desc":"temp",
+    "img":"rori_modules/music_launcher/_min.jpg",
+    "enabled":true,
+    "condition":"(musi(c|que) ?!)|((play|lance|joue).{1,30}(musi(c|que)))",
+    "path":"music_launcher/module.py",
+    "priority":0,
+    "deps":[]
+  }
+]

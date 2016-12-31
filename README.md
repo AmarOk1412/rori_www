@@ -14,6 +14,17 @@ This is a website created to present what is _[RORI](https://github.com/AmarOk14
 
 # Configure
 
+In _downloads.json_ you can configure the index page. You just have to add entries like this:
+
+```json
+{
+  "img":"images/rori_server.png",
+  "name":"Core Server",
+  "description":"This is the central point of RORI. This application get data from entry points, call modules to process this data and send data to endpoints to execute commands.",
+  "url":"https://github.com/AmarOk1412/rori_server"
+}
+```
+
 In _configure_part.json_ you can configure which is the path to configurate `rori_server` and which modules groups you want to configure. For example:
 
 ```json

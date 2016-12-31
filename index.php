@@ -30,8 +30,12 @@
 							and released for free under the WTFPL on <a href="https://github.com/AmarOk1412/rori">Github</a>.</p>
 							<ul class="actions">
 								<li><a href="https://github.com/AmarOk1412/rori/wiki" class="button scrolly">How it works</a></li>
-								<li><a href="configure.php" class="button scrolly">Configure</a></li>
-								<li><a href="#todo" class="button scrolly">Download</a></li>
+								<?php
+								if (file_exists('configure_part.json')) {
+									echo '<li><a href="configure.php" class="button scrolly">Configure</a></li>';
+								}
+								?>
+								<li><a href="#downloads" class="button scrolly">Download</a></li>
 							</ul>
 						</div>
 						<div id="btn_down"><a href="#discover" class="button scrolly">⋁</a></div>
@@ -39,13 +43,39 @@
 
 						<!-- Discover -->
 						<section id="discover" class="wrapper style1 fullscreen fade-up">
+							<div id="btn_up"><a href="#intro" class="button scrolly">⋀</a></div>
 							<div class="inner">
-								<div id="btn_up"><a href="#intro" class="button scrolly">⋀</a></div>
-								<img src="images/introduction.gif" alt="demonstration" />
+								<video width="70%" controls>
+								  <source src="video/rori.webm" type="video/webm">
+								  Your browser does not support the video tag.
+								</video>
 							</div>
+							<div id="btn_down"><a href="#downloads" class="button scrolly">⋁</a></div>
 						</section>
 
-
+						<section id="downloads" class="wrapper style2 spotlights">
+						<?php
+						$download_path = "downloads.json";
+						$download_file = fopen($download_path, "r") or die("Unable to open file!");
+						$json_download = fread($download_file, filesize($download_path));
+						$downloads = json_decode($json_download);
+						fclose($download_file);
+						foreach ($downloads as $download) {
+							echo '<section>
+								<div class="image"><img src="'.$download->{'img'}.'" alt="'.$download->{'name'}.' image" data-position="center center"/></div>
+								<div class="content">
+									<div class="inner">
+										<h2>'.$download->{'name'}.'</h2>
+										<p>'.$download->{'description'}.'</p>
+										<ul class="actions">
+											<li><a href="'.$download->{'url'}.'" class="button scrolly">Download</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>';
+						}
+						?>
+						</section>
 			</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
