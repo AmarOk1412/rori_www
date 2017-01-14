@@ -107,7 +107,8 @@
 		 										<input type="hidden" name="typemod" value="'.$typemod.'">
 		 										<textarea name="json_module'.$cpt.'" form="moduleform'.$cpt_mod.'" rows="4" cols="50">'.str_replace("\\/", "/", $content_desc).'</textarea>
 		 										<ul class="actions">
-		 											<li><input type="submit" value="Save"></li>
+		 											<li><input type="submit" value="Save" name="save" /></li>
+													<li><input type="submit" value="Delete" name="delete'.$cpt_mod.'" /></li>
 		 										</ul>
 		 										</form>
 		 									</div>
@@ -120,6 +121,27 @@
 						 $cpt_mod += 1;
 					 }
 					?>
+
+					<section class="wrapper style2 spotlights">
+						<div id="add_module">
+							<form id="addmodule" method="post" action="add_module.php">
+								<h2>New module</h2>
+								<input type="text" name="type" value="type" />
+								<textarea name="json_module" form="addmodule" rows="4" cols="50">
+{
+"name":"name",
+"desc":"description",
+"img":"path/url",
+"enabled":true,
+"condition":"condition",
+"path":"path",
+"priority":0,
+"deps":[]
+}</textarea>
+								<input type="submit" value="Add module" />
+							</form>
+						</div>
+					</section>
 			</div>
 
 		<!-- Scripts -->

@@ -1891,6 +1891,20 @@
 			padding: 0;
 		}
 
+	#add_module {
+		width: 80%;
+	  text-align: center;
+		margin-right: auto;
+		margin-left: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	#add_module textarea {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
 /* Button */
 
 	input[type="submit"],
