@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['type'])) {
-  $module_file = $_POST['type'].'.json';
-  if (file_exists($module_file)) {
+  $module_path = $_POST['type'].'.json';
+  if (file_exists($module_path)) {
     $module_file = fopen($module_path, "r") or die("Unable to open file (read)!");
     $json_module = fread($module_file, filesize($module_path));
     $modules = json_decode($json_module);

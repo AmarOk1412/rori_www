@@ -4,9 +4,7 @@
   $modules = [];
   while(!$stop) {
     if (isset($_POST['json_module'.$cpt])) {
-      if (!$_POST['delete'.$cpt]) {
         array_push($modules, json_decode($_POST['json_module'.$cpt]));
-      }
     } else {
       $stop = true;
     }
