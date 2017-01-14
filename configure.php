@@ -96,12 +96,34 @@
 		 						$cpt = 0;
 		 						$typemod = $val;
 		 						foreach ($modules as $module) {
+									$warning = '';
+									$dependencies = $module->{'dependencies'}->{'modules'};
+									$enabled = $module->{'enabled'};
+									if (strlen($dependencies) > 0 && $enabled) {
+										$deps_array =  explode('|', $dependencies);
+				 						foreach ($modules as $m) {
+				 						 $name_m = $m->{'name'};
+				 						 if (in_array($name_m, $deps_array)) {
+				 							 if (!$m->{'enabled'}) {
+												 if (strlen($warning) > 0) {
+													 $warning .= ', ';
+												 }
+												 $warning .= $m->{'name'};
+											 }
+				 						 }
+				 						}
+									}
+
 		 							$content_desc = json_encode($module, JSON_PRETTY_PRINT);
 		 							echo '<section>
 		 								<div class="image"><img src="'.$module->{'img'}.'" alt="" data-position="center center"/></div>
 		 								<div class="content">
-		 									<div class="inner">
-		 										<h2>'.$module->{'name'}.'</h2>
+		 									<div class="inner">';
+											if (strlen($warning) > 0) {
+												echo '<p id="warning">Warning: '.$warning.' not enabled.</p>';
+											}
+
+		 							echo '<h2>'.$module->{'name'}.'</h2>
 		 										<p>'.$module->{'desc'}.'</p>
 		 										<form id="moduleform'.$cpt_mod.'" method="post" action="save_module.php">
 		 										<input type="hidden" name="typemod" value="'.$typemod.'">

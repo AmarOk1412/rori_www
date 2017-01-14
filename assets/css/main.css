@@ -1905,6 +1905,11 @@
 		margin-bottom: 20px;
 	}
 
+	#warning {
+		font-weight: bold;
+		color: black;
+	}
+
 /* Button */
 
 	input[type="submit"],
