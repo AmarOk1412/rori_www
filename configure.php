@@ -107,8 +107,8 @@
 		 										<input type="hidden" name="typemod" value="'.$typemod.'">
 		 										<textarea name="json_module'.$cpt.'" form="moduleform'.$cpt_mod.'" rows="4" cols="50">'.str_replace("\\/", "/", $content_desc).'</textarea>
 		 										<ul class="actions">
-		 											<li><input type="submit" value="Save" name="save" /></li>
-													<li><input type="submit" value="Delete" name="delete'.$cpt_mod.'" /></li>
+		 											<li><input type="submit" value="Save" name="save'.$cpt.'" form="moduleform'.$cpt_mod.'" /></li>
+													<li><input type="submit" value="Delete" name="delete'.$cpt.'" form="moduleform'.$cpt_mod.'" /></li>
 		 										</ul>
 		 										</form>
 		 									</div>
